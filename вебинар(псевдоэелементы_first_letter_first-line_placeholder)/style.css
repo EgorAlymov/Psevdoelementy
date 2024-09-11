@@ -1,0 +1,87 @@
+p{
+    max-width: 500px;
+    position: relative;
+    font-size: 30px;
+}
+
+p::before{
+    content: "Подсказка";
+    color: rgb(255, 255, 255);
+    background-color: rgb(23, 22, 24);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    opacity: 0;
+}
+/* чтобы подсказка появлялась при наведении мышки */
+p:hover::before{opacity: 1;}
+
+ol{
+    list-style: none;
+    counter-reset: numbers;
+    font-size: 18px;
+}
+
+li::before{
+    counter-increment: numbers;
+    content: "0" counter(numbers);
+    font-size: 30px;
+    color: blueviolet;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+a::after{
+    content: "";
+    margin-left: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(img/стрелка.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* анимирование стрелки */
+    transition: 0.3s;
+}
+
+a:hover::after{
+    transition: 0.3s;
+    /* за перемещение отвечает transform */
+    transform: translate(20px);
+}
+
+/* Выделяет первую букву в слове */
+p::first-letter {
+    color: rgb(185, 16, 38);
+}
+
+
+/* Выделяет первую строку*/
+p::first-line {
+    color: rgb(16, 185, 58);
+}
+
+
+/* пример placeholder-текс поля ввода-цвет и эффект исчезновения */
+input{
+    margin-top: 20px;
+    display: block;
+    font-size: 20px;
+}
+
+input::placeholder{
+    color: rgb(153, 168, 15);
+    transition: 0.6s;
+}
+input:focus::placeholder{
+    color: transparent;
+    transition: 0.6s;
+}
+
+

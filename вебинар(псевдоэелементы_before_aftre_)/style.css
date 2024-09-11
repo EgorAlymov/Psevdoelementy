@@ -1,0 +1,17 @@
+p{
+    max-width: 500px;
+    position: relative;
+}
+
+p::before{
+    content: "текст перед";
+    color: brown;
+}
+
+p::after{
+    content: "текст после";
+    color: rgb(42, 165, 93);
+}
+
+
+

@@ -1,0 +1,19 @@
+p{
+    max-width: 500px;
+    position: relative;
+}
+
+p::before{
+    content: "Подсказка";
+    color: rgb(255, 255, 255);
+    background-color: rgb(23, 22, 24);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    opacity: 0;
+}
+/* чтобы подсказка появлялась при наведении мышки */
+p:hover::before{opacity: 1;}
+
+
